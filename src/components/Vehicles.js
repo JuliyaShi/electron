@@ -6,7 +6,7 @@ export default function Vehicles({data}){
       <>
        <h1>Vehicles</h1>
        <Grid columns={3}>
-           {data.map((vehicles, i) => {
+           {data.sort((a, b) => a.max_atmosphering_speed-b.max_atmosphering_speed).map((vehicles, i) => {
              return (
                <Grid.Column key = {i}>
                   <Card>
@@ -24,7 +24,7 @@ export default function Vehicles({data}){
                   </Card>
                </Grid.Column>
              );
-           }).sort((a, b) => a.max_atmosphering_speed-b.max_atmosphering_speed)}
+           })}
        </Grid>
       </>
     );

@@ -6,7 +6,7 @@ export default function Characters({data}){
       <>
        <h1>Characters</h1>
        <Grid columns={3}>
-           {data.map((people, i) => {
+           {data.sort((a, b) => a.birth_year-b.birth_year).map((people, i) => {
              return (
                <Grid.Column key = {i}>
                   <Card>
@@ -24,7 +24,7 @@ export default function Characters({data}){
                   </Card>
                </Grid.Column>
              );
-           }).sort((a, b) => a.birth_year-b.birth_year)}
+           })}
        </Grid>
       </>
     );
